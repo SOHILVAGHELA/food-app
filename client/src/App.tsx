@@ -1,14 +1,34 @@
-
-import './App.css'
-import { Button } from './components/ui/button'
-
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import MainLayout from "./MainLayout";
+import Signup from "./auth/Signup";
+import Login from "./auth/Login";
+import ForgetPassword from "./auth/ForgetPassword";
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainLayout />,
+  },
+  {
+    path: "/login",
+    element: <Login></Login>,
+  },
+  {
+    path: "/signup",
+    element: <Signup></Signup>,
+  },
+  {
+    path: "/forget-password",
+    element: <ForgetPassword></ForgetPassword>,
+  },
+]);
 function App() {
-
   return (
     <>
-    <Button className='bg-orange-400 hover:bg-orange-300'>click me</Button>
+      <RouterProvider router={appRouter}></RouterProvider>
+      {/* <Login></Login> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
