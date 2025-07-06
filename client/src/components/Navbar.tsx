@@ -12,9 +12,9 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "./dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
-import { Button } from "./button";
+} from "./ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Button } from "./ui/button";
 import {
   HandPlatter,
   Loader2,
@@ -36,8 +36,8 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "./sheet";
-import { Separator } from "./separator";
+} from "./ui/sheet";
+import { Separator } from "./ui/separator";
 
 const Navbar = () => {
   const admin = true;
