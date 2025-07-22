@@ -10,8 +10,11 @@ import {
   TableHeader,
   TableRow,
 } from "./ui/table";
+import CheckOutConfirmPage from "./CheckOutConfirmPage";
+import { useState } from "react";
 
 const Cart = () => {
+  const [open, setOpen] = useState<boolean>(false);
   return (
     <div className="flex flex-col max-w-7xl mx-auto my-10">
       <div className="flex justify-end">
@@ -83,10 +86,14 @@ const Cart = () => {
         </TableFooter>
       </Table>
       <div className="flex justify-end my-5">
-        <Button className="bg-orange-400 hover:bg-orange-300">
+        <Button
+          onClick={() => setOpen(true)}
+          className="bg-orange-400 hover:bg-orange-300"
+        >
           Proceed To Checkout
         </Button>
       </div>
+      <CheckOutConfirmPage open={open} setOpen={setOpen} />
     </div>
   );
 };
